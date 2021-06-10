@@ -26,7 +26,7 @@ public class UpdatePage extends JPanel {
 		addDefaultEditText();
 
 		title = new JLabel("Update Doctors Rank Promotion");
-		title.setBounds(400, 10, 300, 50);
+		title.setBounds(250, 10, 500, 50);
 		title.setHorizontalAlignment(SwingConstants.CENTER);
 		title.setFont(new Font("Serif", Font.BOLD, 25));
 
@@ -54,8 +54,8 @@ public class UpdatePage extends JPanel {
 		lb3.setHorizontalAlignment(SwingConstants.CENTER);
 		add(lb3);
 		
-		lb4 = new JLabel("ex) 20140108");
-		lb4.setBounds(450, 280, 100, 20);
+		lb4 = new JLabel("ex) 1208 / 병원장");
+		lb4.setBounds(400, 250, 200, 20);
 		lb4.setHorizontalAlignment(SwingConstants.CENTER);
 		add(lb4);
 
@@ -96,8 +96,9 @@ public class UpdatePage extends JPanel {
 						statusText.setText("");
 						statusText.setText("Updating Doctor's position as " + pos + " ...");
 						PreparedStatement pstat = JPanelTest.con.prepareStatement(sql);
-						pstat.setInt(1, id);
-						pstat.setString(2, pos);
+						
+						pstat.setString(1, pos);
+						pstat.setInt(2, id);
 
 						pstat.executeUpdate();
 						statusText.append("Update Completed!\n");

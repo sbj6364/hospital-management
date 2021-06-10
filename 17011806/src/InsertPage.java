@@ -9,16 +9,14 @@ import java.util.HashMap;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 public class InsertPage  extends JPanel {
 	private HashMap<String, JTextField> textFieldMap;
-	private JPasswordField passwordField;
 	private JPanelTest win;
-	private JLabel title, err;
+	private JLabel title, lb1, lb2, lb3;
 	private JTextArea statusText;
 
 	public InsertPage(JPanelTest win) {
@@ -33,13 +31,27 @@ public class InsertPage  extends JPanel {
 		title.setFont(new Font("Serif", Font.BOLD, 25));
 		JButton btn = new JButton("Save");
 		
+		lb1 = new JLabel("Input Nurse ID which Exist!");
+		lb2 = new JLabel("Input Doctor ID which Exist!");
+		lb1.setBounds(650, 140, 200, 30);
+		lb2.setBounds(650, 180, 200, 30);
+		lb1.setFont(new Font("Dialog", Font.ITALIC, 12));
+		lb2.setFont(new Font("Dialog", Font.ITALIC, 12));
+		add(lb1);
+		add(lb2);
+		
+		lb3 = new JLabel("Status");
+		lb3.setBounds(100, 520, 60, 30);
+		lb3.setHorizontalAlignment(SwingConstants.CENTER);
+		add(lb3);
+		
 		statusText = new JTextArea(" ");
-		statusText.setBounds(500, 200, 400, 300);
+		statusText.setBounds(100, 550, 800, 100);
 		statusText.setEditable(false);
 		add(statusText);
 		
 		btn.setSize(100, 30);
-		btn.setLocation(230, 500);
+		btn.setLocation(550, 500);
 		add(title);
 		add(btn);
 		JLabel err = new JLabel("");
@@ -76,7 +88,7 @@ public class InsertPage  extends JPanel {
 				String s8 = textFieldMap.get("phone").getText();
 				String s9 = textFieldMap.get("email").getText();
 				String s10 = textFieldMap.get("job").getText();
-				
+
 				if (true) {
 					id = Integer.parseInt(s1);
 					nur_id = Integer.parseInt(s2);
@@ -87,14 +99,15 @@ public class InsertPage  extends JPanel {
 					addr = s7;
 					if (s8 == "") {
 						phone = "NULL";
-					}
-					else phone = s8;
+					} else
+						phone = s8;
 					if (s9 == "") {
 						email = "NULL";
-					}
-					else email = s9;
+					} else
+						email = s9;
 					job = s10;
 				}
+
 				
 				String sql = "INSERT INTO Patients VALUES (?,?,?,?,?,?,?,?,?,?);";
 
@@ -104,7 +117,7 @@ public class InsertPage  extends JPanel {
 					Statement stmt;
 					stmt = JPanelTest.con.createStatement();
 					statusText.setText("");
-					statusText.setText("\nInserting data...\n.\n.\n.\n");
+					statusText.setText("Inserting data... ");
 					PreparedStatement pstat = JPanelTest.con.prepareStatement(sql);
 					pstat.setInt(1, id);
 					pstat.setInt(2, nur_id);
@@ -115,10 +128,12 @@ public class InsertPage  extends JPanel {
 					pstat.setString(7, addr);
 					if (phone == "NULL")
 						pstat.setNull(8, 0);
-					else pstat.setString(8, phone);
+					else
+						pstat.setString(8, phone);
 					if (email == "NULL")
 						pstat.setNull(9, 0);
-					else pstat.setString(9, email);
+					else
+						pstat.setString(9, email);
 					pstat.setString(10, job);
 
 					pstat.executeUpdate();
@@ -128,11 +143,9 @@ public class InsertPage  extends JPanel {
 					err.setText("Invalid!");
 					err.setBounds(380, 450, 200, 50);
 					add(err);
-					statusText.append("Inserting Failed!\n"
-					  				+ "Please try again with proper values.\n\n"
-					  				+ "- Check Doctor ID if it is an existing Doctor ID\n"
-					  				+ "- Check Nurse ID if it is an existing Nurse ID\n"
-					  				+ "");
+					statusText.append("Inserting Failed!\n" + "Please try again with proper values.\n\n"
+							+ "- Check Doctor ID if it is an existing Doctor ID\n"
+							+ "- Check Nurse ID if it is an existing Nurse ID\n" + "");
 					System.out.println("쿼리 읽기 실패 :" + e2);
 				}
 			}
@@ -189,7 +202,7 @@ public class InsertPage  extends JPanel {
 		infoList.add("  E-mail");
 		infoList.add("* Job");
 
-		int x = 50, y = 100, m = 130, n = 30;
+		int x = 350, y = 100, m = 100, n = 30;
 		int increasedY = 40;
 		for (String item : infoList) {
 			JLabel label = new JLabel(item);
@@ -203,7 +216,7 @@ public class InsertPage  extends JPanel {
 	private void addDefaultEditText() {
 		textFieldMap = new HashMap<>();
 		String[] keys = { "id", "nur_id", "doc_id", "name", "gen", "jumin", "addr", "phone", "email", "job"};
-		int x = 180, y = 100, m = 150, n = 30;
+		int x = 500, y = 100, m = 150, n = 30;
 		int increasedY = 40;
 
 		for (int idx = 0; idx < 10; idx++) {

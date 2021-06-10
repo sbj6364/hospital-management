@@ -12,8 +12,8 @@ public class StartPage {
 		win.jpanel02 = new JPanel02(win);
 		win.searchPage = new SearchPage(win);
 		win.insertPage = new InsertPage(win);
-//		win.professorHome = new ProfessorHome(win);
-//		win.studentHome = new StudentHome(win);
+		win.deletePage = new DeletePage(win);
+		win.updatePage = new UpdatePage(win);
 //		win.jpanelOfAddStudent = new JPanelOfAddStudent(win);
 //		win.tableView = new TableView(win);
 //		win.pLectureView = new PLectureView(win);

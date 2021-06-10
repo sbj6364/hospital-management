@@ -219,7 +219,7 @@ class AddPatient extends JPanel {
 class JPanel01 extends JPanel {
 
 	private JButton jButton1;
-	private JButton btn1, btn2, btn3, btnReset, btnClear;
+	private JButton btn1, btn2, btn3, btn4, btnReset, btnClear;
 	private JScrollPane jScrollPane1;
 	private JTextArea statusText;
 	private JPanelTest win;
@@ -233,7 +233,7 @@ class JPanel01 extends JPanel {
 		this.win = win;
 		setLayout(null);
 
-//		JLabel title = new JLabel("Hospital Management");
+		Font f = new Font("Dialog", Font.BOLD,20);
 
 		title = new JLabel("Hospital Management");
 		title.setBounds(300, 10, 400, 50);
@@ -248,15 +248,23 @@ class JPanel01 extends JPanel {
 
 		btn1 = new JButton("Insert");
 		btn2 = new JButton("Delete");
-		btn3 = new JButton("Search");
+		btn3 = new JButton("Update");
+		btn4 = new JButton("Search");
+		
+		btn1.setFont(f);
+		btn2.setFont(f);
+		btn3.setFont(f);
+		btn4.setFont(f);
+		
 		btnReset = new JButton("Reset Database");
 		btnClear = new JButton("Clear");
 
 		statusText = new JTextArea(" ");
 
-		btn1.setBounds(100, 200, 200, 100);
-		btn2.setBounds(400, 200, 200, 100);
-		btn3.setBounds(700, 200, 200, 100);
+		btn1.setBounds(125, 200, 150, 90);
+		btn2.setBounds(325, 200, 150, 90);
+		btn3.setBounds(525, 200, 150, 90);
+		btn4.setBounds(725, 200, 150, 90);
 		btnReset.setBounds(400, 450, 200, 50);
 		statusText.setBounds(100, 550, 800, 100);
 		statusText.setEditable(false);
@@ -265,6 +273,8 @@ class JPanel01 extends JPanel {
 		add(btn1);
 		add(btn2);
 		add(btn3);
+		add(btn4);
+		
 		add(btnReset);
 		add(statusText);
 		add(btnClear);
@@ -278,10 +288,16 @@ class JPanel01 extends JPanel {
 		btn2.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				win.change("searchPage");
+				win.change("deletePage");
 			}
 		});
 		btn3.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				win.change("updatePage");
+			}
+		});
+		btn4.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				win.change("searchPage");
@@ -403,8 +419,8 @@ class JPanelTest extends JFrame {
 	public JPanel02 jpanel02 = null;
 	public SearchPage searchPage = null;
 	public InsertPage insertPage = null;
-//	public StudentHome studentHome = null;
-//	public JPanelOfAddStudent jpanelOfAddStudent = null;
+	public DeletePage deletePage = null;
+	public UpdatePage updatePage = null;
 //	public TableView tableView = null;
 //	public PLectureView pLectureView = null;
 //	public PStudentView pStudentView = null;
@@ -447,24 +463,16 @@ class JPanelTest extends JFrame {
 			getContentPane().add(insertPage);
 			revalidate();
 			repaint();
-//		} else if (panelName.equals("jpanelOfAddStudent")) {
-//			System.out.println("start");
-//			getContentPane().removeAll();
-//			System.out.println("remove");
-//			getContentPane().add(jpanelOfAddStudent);
-//			System.out.println("add");
-//			revalidate();
-//			repaint();
-//		} else if (panelName.equals("tableView")) {
-//			getContentPane().removeAll();
-//			getContentPane().add(tableView);
-//			revalidate();
-//			repaint();
-//		} else if (panelName.equals("pLectureView")) {
-//			getContentPane().removeAll();
-//			getContentPane().add(pLectureView);
-//			revalidate();
-//			repaint();
+		} else if (panelName.equals("deletePage")) {
+			getContentPane().removeAll();
+			getContentPane().add(deletePage);
+			revalidate();
+			repaint();
+		} else if (panelName.equals("updatePage")) {
+			getContentPane().removeAll();
+			getContentPane().add(updatePage);
+			revalidate();
+			repaint();
 //		} else if (panelName.equals("pStudentView")) {
 //			getContentPane().removeAll();
 //			getContentPane().add(pStudentView);

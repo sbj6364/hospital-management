@@ -16,7 +16,7 @@ import javax.swing.SwingConstants;
 public class UpdatePage extends JPanel {
 	private HashMap<String, JTextField> textFieldMap;
 	private JPanelTest win;
-	private JLabel title, lb1, lb2, lb3, lb4;
+	private JLabel title, lb1, lb2, lb3, lb4, lb5;
 	private JTextArea statusText;
 
 	public UpdatePage(JPanelTest win) {
@@ -34,15 +34,19 @@ public class UpdatePage extends JPanel {
 
 		lb1 = new JLabel("You can update doctors' rank(position).");
 		lb2 = new JLabel("Once you input `Doctor Id` and `Position`, his(or her) position will be updated.");
-		lb1.setBounds(200, 100, 600, 30);
-		lb2.setBounds(200, 130, 600, 30);
+		lb5 = new JLabel("의사의 직급을 바꿀 수 있습니다. 의사 ID와 변경하고자 하는 직급을 입력하세요.");
+		lb1.setBounds(200, 100, 600, 20);
+		lb2.setBounds(200, 120, 600, 20);
+		lb5.setBounds(200, 150, 600, 30);
 		lb1.setFont(new Font("Dialog", Font.ITALIC, 13));
 		lb2.setFont(new Font("Dialog", Font.ITALIC, 13));
 		lb1.setHorizontalAlignment(SwingConstants.CENTER);
 		lb2.setHorizontalAlignment(SwingConstants.CENTER);
+		lb5.setHorizontalAlignment(SwingConstants.CENTER);
 
 		add(lb1);
 		add(lb2);
+		add(lb5);
 
 		statusText = new JTextArea(" ");
 		statusText.setBounds(100, 550, 800, 100);

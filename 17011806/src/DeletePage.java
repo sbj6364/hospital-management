@@ -17,7 +17,7 @@ import javax.swing.SwingConstants;
 public class DeletePage extends JPanel {
 	private HashMap<String, JTextField> textFieldMap;
 	private JPanelTest win;
-	private JLabel title, lb1, lb2, lb3, lb4;
+	private JLabel title, lb1, lb2, lb3, lb4, lb5;
 	private JTextArea statusText;
 
 	public DeletePage(JPanelTest win) {
@@ -34,16 +34,21 @@ public class DeletePage extends JPanel {
 		JButton btn = new JButton("Delete");
 
 		lb1 = new JLabel("You can delete Charts if the treatment of the chart has been out-dated.");
-		lb2 = new JLabel("Once you input `date`, all Charts before the `date` will be deleted.");
-		lb1.setBounds(200, 100, 600, 30);
-		lb2.setBounds(200, 130, 600, 30);
+		lb2 = new JLabel("Once you input `date`, all Charts with treatment before the `date` will be deleted.");
+		lb5 = new JLabel("날짜를 입력하면 해당 날짜 이전의 진료기록이 있는 차트를 모두 삭제합니다.");
+		lb1.setBounds(200, 100, 600, 20);
+		lb2.setBounds(200, 120, 600, 20);
+		lb5.setBounds(200, 150, 600, 30);
 		lb1.setFont(new Font("Dialog", Font.ITALIC, 13));
 		lb2.setFont(new Font("Dialog", Font.ITALIC, 13));
+		lb5.setFont(new Font("Dialog", Font.ITALIC, 13));
 		lb1.setHorizontalAlignment(SwingConstants.CENTER);
 		lb2.setHorizontalAlignment(SwingConstants.CENTER);
+		lb5.setHorizontalAlignment(SwingConstants.CENTER);
 
 		add(lb1);
 		add(lb2);
+		add(lb5);
 
 		statusText = new JTextArea(" ");
 		statusText.setBounds(100, 550, 800, 100);

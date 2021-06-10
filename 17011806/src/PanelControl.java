@@ -214,7 +214,6 @@ class AddPatient extends JPanel {
 
 }
 
-// Log in
 @SuppressWarnings("serial")
 class JPanel01 extends JPanel {
 
@@ -225,10 +224,6 @@ class JPanel01 extends JPanel {
 	private JPanelTest win;
 	private JLabel title, lb1;
 
-// private JLabel title;
-// JLabel title = new JLabel("Home - Access Mode");
-// title.setBounds(450, 5, 200, 50);
-// add(title);
 	public JPanel01(JPanelTest win) {
 		this.win = win;
 		setLayout(null);
@@ -258,6 +253,8 @@ class JPanel01 extends JPanel {
 		
 		btnReset = new JButton("Reset Database");
 		btnClear = new JButton("Clear");
+		
+		btnReset.setFont(new Font("Dialog", Font.BOLD, 17));
 
 		statusText = new JTextArea(" ");
 
@@ -421,23 +418,13 @@ class JPanelTest extends JFrame {
 	public InsertPage insertPage = null;
 	public DeletePage deletePage = null;
 	public UpdatePage updatePage = null;
-//	public TableView tableView = null;
-//	public PLectureView pLectureView = null;
-//	public PStudentView pStudentView = null;
-//	public PDeptView pDeptView = null;
-//	public SLectureView sLectureView = null;
-//	public SClubView sClubView = null;
-//	public AdminStudent adminStudent = null;
-//	public AdminStudent adminStudent = null;
-//	public AdminStudent adminStudent = null;
-//	public AdminStudent adminStudent = null;
+
 
 	JPanelTest() {
 		txtStatus = new JTextArea(5, 20);
 		txtStatus.setEditable(false);
 		JScrollPane scrollPane = new JScrollPane(txtStatus);
 
-//		add(scrollPane);
 		conDB();
 	}
 
@@ -473,36 +460,6 @@ class JPanelTest extends JFrame {
 			getContentPane().add(updatePage);
 			revalidate();
 			repaint();
-//		} else if (panelName.equals("pStudentView")) {
-//			getContentPane().removeAll();
-//			getContentPane().add(pStudentView);
-//			revalidate();
-//			repaint();
-//		} else if (panelName.equals("pDeptView")) {
-//			getContentPane().removeAll();
-//			getContentPane().add(pDeptView);
-//			revalidate();
-//			repaint();
-//		} else if (panelName.equals("sClubView")) {
-//			getContentPane().removeAll();
-//			getContentPane().add(sClubView);
-//			revalidate();
-//			repaint();
-//		} else if (panelName.equals("sLectureView")) {
-//			getContentPane().removeAll();
-//			getContentPane().add(sLectureView);
-//			revalidate();
-//			repaint();
-//		} else if (panelName.equals("sLectureView")) {
-//			getContentPane().removeAll();
-//			getContentPane().add(sLectureView);
-//			revalidate();
-//			repaint();
-//		} else if (panelName.equals("sLectureView")) {
-//			getContentPane().removeAll();
-//			getContentPane().add(sLectureView);
-//			revalidate();
-//			repaint();
 		} else {
 			getContentPane().removeAll();
 			getContentPane().add(jpanel01);

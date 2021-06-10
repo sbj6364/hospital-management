@@ -1,4 +1,4 @@
-# Hospital Management System
+# Details
 > Program for management of a hospital
 
 
@@ -19,7 +19,7 @@
 
 
 
-#### [Details | 세부 설계](./details.md)
+#### [Details | 세부 설계]()
 
 > 본 내용에 대한 세부적인 설계 사항이다.
 

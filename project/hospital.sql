@@ -231,34 +231,49 @@ VALUES (140308087, 7643, 062019, '장염', '14/03/08');
 
 
 INSERT INTO Charts(chart_id, treat_id, doc_id, pat_id, nur_id, chart_contents)
-VALUES ('p_130516023', 130516023, 980312, 2345, 50302, '감기 주사 및 약 처방');
+VALUES ('a0001', 130516023, 980312, 2345, 50302, '해열제 및 링거 처방');
 
 INSERT INTO Charts(chart_id, treat_id, doc_id, pat_id, nur_id, chart_contents)
-VALUES ('d_130628100', 130628100, 020403, 3545, 040089, '피부 감염 방지 주사');
+VALUES ('a0002', 130628100, 020403, 3545, 040089, '피부약 및 마스크팩 처방');
 
 INSERT INTO Charts(chart_id, treat_id, doc_id, pat_id, nur_id, chart_contents)
-VALUES ('r_131205056', 131205056, 080543, 3424, 070605, '주사 처방');
+VALUES ('a0003', 131205056, 080543, 3424, 070605, '추가 CT 촬영 예약');
 
 INSERT INTO Charts(chart_id, treat_id, doc_id, pat_id, nur_id, chart_contents)
-VALUES ('p_131218024', 131218024, 050900, 7675, 100356, '귓속청소 및 약 처방');
+VALUES ('a0004', 131218024, 050900, 7675, 100356, '귓속청소 및 적외선 치료 처방');
 
 INSERT INTO Charts(chart_id, treat_id, doc_id, pat_id, nur_id, chart_contents)
-VALUES ('i_131224012', 131224012, 000601, 4533, 070804, '장염 입원치료');
+VALUES ('a0005', 131224012, 000601, 4533, 070804, '이틀 금식 처방');
 
 INSERT INTO Charts(chart_id, treat_id, doc_id, pat_id, nur_id, chart_contents)
-VALUES ('d_140103001', 140103001, 070576, 5546, 120309, '여드름 치료약 처방');
+VALUES ('a0006', 140103001, 070576, 5546, 120309, '여드름 스티커 처방');
 
 INSERT INTO Charts(chart_id, treat_id, doc_id, pat_id, nur_id, chart_contents)
-VALUES ('i_140109026', 140109026, 050101, 4543, 070804, '위내시경');
+VALUES ('a0007', 140109026, 050101, 4543, 070804, '위내시경 및 항생제 처방');
 
 INSERT INTO Charts(chart_id, treat_id, doc_id, pat_id, nur_id, chart_contents)
-VALUES ('s_140226102', 140226102, 091001, 9768, 130211, '화상 크림약 처방');
+VALUES ('a0008', 140226102, 091001, 9768, 130211, '화상연고 및 얼음 찜질 처방');
 
 INSERT INTO Charts(chart_id, treat_id, doc_id, pat_id, nur_id, chart_contents)
-VALUES ('s_140303003', 140303003, 091001, 4234, 130211, '입원치료');
+VALUES ('a0009', 140303003, 091001, 4234, 130211, '깁스 후 목발 처방');
 
 INSERT INTO Charts(chart_id, treat_id, doc_id, pat_id, nur_id, chart_contents)
-VALUES ('p_140308087', 140308087, 062019, 7643, 071018, '장염 입원치료');
+VALUES ('a0010', 140308087, 000601, 7643, 071018, '대장 내시경 처방');
+
+INSERT INTO Charts(chart_id, treat_id, doc_id, pat_id, nur_id, chart_contents)
+VALUES ('a0011', 140103001, 070576, 7643, 071018, '여드름 흉터 레이저 치료');
+
+INSERT INTO Charts(chart_id, treat_id, doc_id, pat_id, nur_id, chart_contents)
+VALUES ('a0012', 140109026, 980312, 7643, 071018, '호전 상태 점검 후 별다른 처방 없음');
+
+INSERT INTO Charts(chart_id, treat_id, doc_id, pat_id, nur_id, chart_contents)
+VALUES ('a0013', 140226102, 091001, 7643, 071018, '화상연고 및 레이저 치료');
+
+INSERT INTO Charts(chart_id, treat_id, doc_id, pat_id, nur_id, chart_contents)
+VALUES ('a0014', 140303003, 001208, 7643, 071018, '깁스 제거 및 소독');
+
+INSERT INTO Charts(chart_id, treat_id, doc_id, pat_id, nur_id, chart_contents)
+VALUES ('a0015', 140308087, 062019, 7643, 071018, '지사제 및 링거 처방');
 
 
 
